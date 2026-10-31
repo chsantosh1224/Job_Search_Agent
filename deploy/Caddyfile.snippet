@@ -1,0 +1,20 @@
+# Add this block to the existing Caddyfile (next to invoice.aicruit.in), then reload Caddy.
+# Caddy fetches the HTTPS certificate for jobs.aicruit.in automatically once DNS points here.
+
+jobs.aicruit.in {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:8010
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "same-origin"
+		X-Robots-Tag "noindex, nofollow"
+		-Server
+	}
+}
+
+# If Caddy runs in Docker rather than on the host, 127.0.0.1 is the Caddy container itself.
+# Use the host's Docker gateway instead (usually 172.17.0.1), and change the api port in
+# deploy/docker-compose.prod.yml from "127.0.0.1:8010:8000" to "172.17.0.1:8010:8000":
+#   reverse_proxy 172.17.0.1:8010

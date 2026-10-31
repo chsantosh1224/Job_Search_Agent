@@ -1,0 +1,7 @@
+# Extra company job boards to read on every run, one per line:  ats_type, slug, Company Name
+# ats_type is greenhouse, lever or ashby. The slug is the part after the domain in the board URL:
+#   https://jobs.ashbyhq.com/<slug>   https://jobs.lever.co/<slug>   https://boards.greenhouse.io/<slug>
+# Boards linked from Hacker News / YC / RemoteOK / Remotive posts are discovered automatically.
+#
+# Example:
+# ashby, examplestartup, Example Startup
