@@ -21,7 +21,7 @@ dig +short jobs.aicruit.in
 
 ```bash
 cd ~
-git clone https://github.com/chsantosh1224/job-search-agent.git
+git clone https://github.com/chsantosh1224/Job_Search_Agent.git job-search-agent
 cd job-search-agent
 bash deploy/server-setup.sh
 ```
