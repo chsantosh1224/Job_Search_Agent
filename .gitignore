@@ -23,3 +23,6 @@ data/
 .DS_Store
 .vscode/
 .idea/
+
+# job_finder outputs
+job_finder/output/
