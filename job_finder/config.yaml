@@ -1,0 +1,43 @@
+roles: [SDET, QA Automation Engineer, AI Automation Engineer, AI Engineer]
+locations: [Bengaluru, Bangalore, Remote India]
+
+main_query: >-
+  Currently open job postings with active application links at product companies and promising startups for AI Engineer, AI Automation Engineer, QA Automation Engineer, and SDET roles in Bengaluru or remote India. Prioritize direct employer career pages and application links over job boards. Include only roles that are currently open to apply.
+
+
+exclude_domains: [linkedin.com, naukri.com, indeed.com, glassdoor.com,
+  glassdoor.co.in, foundit.in, shine.com, timesjobs.com, instahyre.com,
+  cutshort.io, ziprecruiter.com, simplyhired.com, reddit.com, medium.com,
+  youtube.com]
+target_company_domains: []   # filled in later (Run C)
+
+published_within_days: 14
+num_results: 100
+search_type: deep
+
+# Exa request extras
+user_location: IN          # ISO country code
+max_age_hours: 0           # 0 = livecrawl every result (freshest); -1 = cache only
+livecrawl_timeout_ms: 10000
+highlights_max_chars: 1500
+
+# Filters (case-insensitive regexes matched against job titles / locations)
+role_patterns:
+  - '\bsdet\b'
+  - 'software (development )?engineer in test'
+  - '\b(qa|test|testing|quality)\b.*\bautomation\b'
+  - '\bautomation\b.*\b(qa|test|testing|quality)\b'
+  - '\b(qa|quality assurance|quality) engineer'
+  - '\bai\b.*\bautomation engineer'
+  - '\b(ai|gen ?ai|llm|applied ai|ai/ml|ai ml)\b (software )?engineer'
+  - '\bai quality\b'
+exclude_title_patterns: ['\bintern(ship)?\b', '\btrainee\b']
+onsite_location_patterns: ['bengaluru', 'bangalore']
+remote_region_patterns: ['\bindia\b']
+agency_keywords: [staffing, recruitment, recruiters, manpower, placement,
+  consultancy services, hr services, talent solutions, headhunt]
+
+concurrency: 5
+db_path: data/jobs.db
+raw_dir: data/raw
+out_dir: output
